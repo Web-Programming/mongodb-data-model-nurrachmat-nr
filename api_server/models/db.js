@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 
 let dbURI = "mongodb+srv://si:sisteminformasi@cluster0.zxiwyfw.mongodb.net/si5a?retryWrites=true&w=majority"
 
-mongoose.connect(dbURI, {useNewUrlParser: true});
+mongoose.connect(dbURI, {
+    useNewUrlParser: true
+});
 
 mongoose.connection.on('connected', () => {
     console.log(`Mongoose connected to ${dbURI}`);
@@ -17,5 +19,6 @@ mongoose.connection.on('disconnected', () => {
 });
 
 //Panggil file model
-require ("./mahasiswa");
+require("./mahasiswa");
+require("./users");
 //require("./dosen");
