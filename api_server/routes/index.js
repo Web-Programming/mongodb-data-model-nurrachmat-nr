@@ -19,4 +19,10 @@ router.route("/mahasiswa/:id")
       .put(ctrlMhs.mhsUpdateOne)
       .delete(ctrlMhs.mhsDeleteOne);
 
+//buat router
+//http://localhost:3000/api/register
+//http://localhost:3000/api/login
+router.post('/register', ctrlAuth.register);
+router.post('/login', ctrlAuth.login);
+
 module.exports = router;
