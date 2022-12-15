@@ -31,7 +31,7 @@ userSchema.methods.validPassword = function (password) {
     return this.hash === hash;
 }
 
-userSchema.method.generateJwt = function () {
+userSchema.methods.generateJwt = function () {
     const expiry = new Date();
     expiry.setDate(expiry.getDate() + 7); // 7 hari
 
