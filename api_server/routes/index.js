@@ -19,6 +19,7 @@ router.route("/mahasiswa/:id")
       .put(ctrlMhs.mhsUpdateOne)
       .delete(ctrlMhs.mhsDeleteOne);
 
+var ctrlAuth = require("../controllers/authentication");
 //buat router
 //http://localhost:3000/api/register
 //http://localhost:3000/api/login
