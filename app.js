@@ -39,6 +39,17 @@ app.use('/api', (req, res, next) => {
   next();
 })
 
+//untuk memberikan respon error karena tidak ada akses
+app.use((err, req, res, next) => {
+  if (err.name === 'UnauthorizedError') {
+    res
+      .status(401)
+      .json({
+        "message": err.name + ": " + err.message
+      });
+  }
+});
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
